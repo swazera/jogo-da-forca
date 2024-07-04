@@ -1,0 +1,43 @@
+* {
+    font-family: "Courier", monospace;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    text-align: center;
+  }
+
+  .container {
+    height: 300px;
+    margin: 30px auto;
+    position: relative;
+  }
+  
+  .vertical {
+    background: rgb(127, 126, 192);
+    width: 25px;
+    height: 280px;
+    position: absolute;
+    right: 825px;
+  }
+  
+  .horizontal {
+    background: rgb(127, 126, 192);
+    width: 200px;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 900px;
+  }
+
+  .gancho {
+    width: 63px;
+    height: 50px;
+    border: solid 25px rgb(127, 126, 192);
+    border-bottom: none;
+    position: absolute;
+    right: 825px;
+  }
+
+  
