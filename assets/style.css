@@ -9,35 +9,34 @@
   }
 
   .container {
+    width: 200px;
     height: 300px;
     margin: 30px auto;
     position: relative;
   }
   
   .vertical {
-    background: rgb(127, 126, 192);
+    background: rgb(0, 0, 0);
     width: 25px;
-    height: 280px;
+    height: 300px;
     position: absolute;
-    right: 825px;
+    right: 25px;
   }
   
   .horizontal {
-    background: rgb(127, 126, 192);
+    background: rgb(0, 0, 0);
     width: 200px;
-    height: 25px;
+    height: 20px;
     position: absolute;
     bottom: 0;
-    left: 900px;
   }
 
   .gancho {
     width: 63px;
     height: 50px;
-    border: solid 25px rgb(127, 126, 192);
+    border: solid 25px rgb(0, 0, 0);
     border-bottom: none;
     position: absolute;
-    right: 825px;
+    right: 25px;
   }
-
   
