@@ -39,4 +39,42 @@
     position: absolute;
     right: 25px;
   }
+
+  .conteudo {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  #palavra {
+    text-align: left;
+    font-size: 25px;
+  }
+
+  .container-palpite {
+    text-align: left;
+    font-size: 25px;
+    margin-top: 15px;
+  }
+
+  #palpite {
+    font-size: 25px;
+    text-align: center;
+    width: 30px;
+    border: none;
+    border: solid 2px rgb(255, 0, 0);
+    outline: none;
+    text-transform: capitalize;
+  }
+
+  #erros {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.instrucao {
+  font-size: 17px;
+  margin-top: 7px;
+  text-align: center;
+}
   
