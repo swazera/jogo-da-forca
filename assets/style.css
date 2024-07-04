@@ -11,15 +11,19 @@
     flex-direction: column;
   }
 
+  h1 {
+    font-size: 60px;
+  }
+
   .gancho-imagem {
-    height: auto;
+    width: 300px;
+    height: center;
     position: absolute;
   }
 
   .container {
-    width: 200px;
-    height: 500px;
-    margin: 30px auto;
+    height: 350px;
+    margin: 100px auto;
     position: relative;
   }
 
@@ -29,7 +33,7 @@
   }
 
   #palavra {
-    text-align: left;
+    text-align: center;
     font-size: 25px;
   }
 
@@ -52,7 +56,9 @@
   #erros {
   text-align: left;
   font-size: 20px;
-  margin-top: 5px;
+  margin-top: 10px;
+  color: rgb(255, 0, 0);
+  border: solid black;
 }
 
 .instrucao {
@@ -63,3 +69,75 @@
 
 /* Elaborando o boneco do jogo da forca */
 
+.homem {
+  width: 100px;
+  height: 175px;
+  position: absolute;
+  top: 155px;
+  left: 240px;
+}
+
+.homem-1 {
+  width: 40px;
+  height: 40px;
+  border: solid 10px black;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  left: 19px;
+  display: none;
+}
+
+.homem-2 {
+  background: black;
+  width: 10px;
+  height: 70px;
+  position: absolute;
+  top: 57px;
+  left: 45px;
+  display: none;
+}
+
+.homem-3 {
+  background: black;
+  width: 10px;
+  height: 60px;
+  position: absolute;
+  top: 30px;
+  left: 21px;
+  transform: rotate(-50deg);
+  display: none;
+}
+
+.homem-4 {
+  background: black;
+  width: 10px;
+  height: 60px;
+  position: absolute;
+  top: 30px;
+  right: 21px;
+  transform: rotate(50deg);
+  display: none;
+}
+
+.homem-5 {
+  background: black;
+  width: 10px;
+  height: 60px;
+  position: absolute;
+  bottom: -2px;
+  left: 25px;
+  transform: rotate(40deg);
+  display: none;
+}
+
+.homem-6 {
+  background: black;
+  width: 10px;
+  height: 60px;
+  position: absolute;
+  bottom: -2px;
+  right: 25px;
+  transform: rotate(-40deg);
+  display: none;
+}

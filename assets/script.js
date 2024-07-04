@@ -30,5 +30,3 @@ var escolhasDePalavras = [
     'sapato',
     'liquidificador'
   ];
-  
-  
