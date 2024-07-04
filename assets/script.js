@@ -26,6 +26,9 @@ var escolhasDePalavras = [
     'caixa',
     'mamadeira',
     'melancia',
-    'internet'
+    'internet',
+    'sapato',
+    'liquidificador'
   ];
+  
   
