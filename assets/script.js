@@ -69,3 +69,23 @@ function gerarPalavraComPalpites() {
     resultado = 1;
   }
 }
+
+function gerarErros() {
+  var letrasPerdidas = '';
+
+  for (var i = 0; i < homem.length; i++) {
+    homem[i].style.display = 'none';
+  }
+
+  for (var i = 0; i < letrasErradas.length; i++) {
+    document.querySelector('.homem-' + (i + 1)).style.display = 'block';
+    letrasPerdidas += letrasErradas[i] + ', ';
+  }
+
+  letrasPerdidas = letrasPerdidas.substring(0, letrasPerdidas.length - 2);
+  erros.innerHTML = 'ERROS: ' + letrasPerdidas;
+
+  if (letrasErradas.length >= 6) {
+    resultado = 2;
+  }
+}
