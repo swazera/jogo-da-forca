@@ -72,8 +72,8 @@
   width: 100px;
   height: 375px;
   position: absolute;
-  top: 270px;
-  left: 962px;
+  top: 30vh;
+  left: calc(50.3% - 0vw)
 }
 
 .homem-1 {
@@ -135,7 +135,7 @@
   width: 10px;
   height: 60px;
   position: absolute;
-  bottom: -2px;
+  bottom: 200px;
   right: 25px;
   transform: rotate(-40deg);
   display: none;
