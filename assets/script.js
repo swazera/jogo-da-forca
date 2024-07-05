@@ -1,10 +1,12 @@
-var escolhasDePalavras = [
-    'forca','leão','capitão','gato','salvar','configurações','cachorro','entrar','faculdade','console','idade',
-    'maça','coração','excluir','despertador','casa','compartilhar','cidade','garrafa','água','celular',
-    'caderno','monitor','software','caixa','mamadeira','melancia','internet','sapato','liquidificador',
-    'amor','branco','copo','noite','ovo','parque','peixe','rato','pai','coelho','otorrinolaringologista',
-    'sino','campeonato','moeda','pedreiro','serenata','formiga','pneumonia','menta','caatinga'
-  ];
+var palavrasPredefinidas = [
+  'forca','leão','capitão','gato','salvar','configurações','cachorro','entrar','faculdade','console','idade',
+  'maça','coração','excluir','despertador','casa','compartilhar','cidade','garrafa','água','celular',
+  'caderno','monitor','software','caixa','mamadeira','melancia','internet','sapato','liquidificador',
+  'amor','branco','copo','noite','ovo','parque','peixe','rato','pai','coelho','otorrinolaringologista',
+  'sino','campeonato','moeda','pedreiro','serenata','formiga','pneumonia','menta','caatinga'
+];
+
+var escolhasDePalavras = JSON.parse(localStorage.getItem('palavras')) || [];
 
 var resultado = 0;
 var palavraEscolhida = '';
@@ -15,8 +17,28 @@ var palpite = document.querySelector('#palpite');
 var erros = document.querySelector('#erros');
 var homem = document.querySelectorAll('.homem div');
 
-function gerarPalavraEscolhida() {
-  palavraEscolhida = escolhasDePalavras[Math.floor(Math.random() * escolhasDePalavras.length)];
+// selecionando elementos do modal
+var modal = document.getElementById("dialogo");
+var btnAbrirDialogo = document.getElementById("abrir-dialogo");
+var btnIniciarJogo = document.getElementById("iniciar-jogo");
+var spanFechar = document.getElementsByClassName("fechar")[0];
+
+btnAbrirDialogo.onclick = function() {
+  modal.style.display = "block";
+}
+
+spanFechar.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function gerarPalavraEscolhida(listaDePalavras) {
+  palavraEscolhida = listaDePalavras[Math.floor(Math.random() * listaDePalavras.length)];
 }
 
 function gerarPalavraComPalpites() {
@@ -27,13 +49,11 @@ function gerarPalavraComPalpites() {
     if (palavraEscolhida[i] != ' ') {
       if (palpites.toUpperCase().indexOf(palavraEscolhida[i].toUpperCase()) >= 0) {
         palavraComPalpites += palavraEscolhida[i].toUpperCase() + '&nbsp;';
-      }
-      else {
+      } else {
         palavraComPalpites += '_&nbsp;';
         jogoTerminado = false;
       }
-    }
-    else {
+    } else {
       palavraComPalpites += '&nbsp;&nbsp;';
     }
   }
@@ -65,7 +85,7 @@ function gerarErros() {
   }
 }
 
-function iniciarJogo() {
+function iniciarJogo(listaDePalavras) {
   resultado = 0;
   palavraEscolhida = '';
   palpites = '';
@@ -75,14 +95,33 @@ function iniciarJogo() {
   palpite.value = '';
   erros.innerText = '';
 
-  gerarPalavraEscolhida();
+  gerarPalavraEscolhida(listaDePalavras);
   gerarPalavraComPalpites();
   gerarErros();
 
   palpite.disabled = false;
 }
 
-iniciarJogo();
+function salvarNovasPalavras(event) {
+  event.preventDefault();
+  var novasPalavrasTexto = document.getElementById('novas-palavras').value.trim();
+  if (novasPalavrasTexto) {
+    var novasPalavras = novasPalavrasTexto.split(/[\s,]+/);  // Divide por vírgula ou espaços
+    escolhasDePalavras = escolhasDePalavras.concat(novasPalavras);
+    localStorage.setItem('palavras', JSON.stringify(escolhasDePalavras));
+    document.getElementById('novas-palavras').value = '';
+    modal.style.display = "none";
+    alert('Palavras salvas!');
+    iniciarJogo(novasPalavras);
+  } else {
+    alert('Insira pelo menos uma palavra válida.');
+  }
+}
+
+document.getElementById('form-cadastro').addEventListener('submit', salvarNovasPalavras);
+btnIniciarJogo.onclick = function() {
+  iniciarJogo(palavrasPredefinidas);
+};
 
 palpite.addEventListener('keypress', function(evt) {
   if (evt.keyCode === 13) {
@@ -103,12 +142,12 @@ palpite.addEventListener('keypress', function(evt) {
       if (resultado === 1) {
         palpite.disabled = true;
         if (confirm('Você ganhou :D.  Você teve ' + letrasErradas.length + ' erros.')) {
-          iniciarJogo();
+          iniciarJogo(escolhasDePalavras);
         }
       } else if (resultado === 2) {
         palpite.disabled = true;
         if (confirm('Você perdeu :(.  A resposta era "' + palavraEscolhida + '".')) {
-          iniciarJogo();
+          iniciarJogo(escolhasDePalavras);
         }
       }
     }
