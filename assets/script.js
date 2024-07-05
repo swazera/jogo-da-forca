@@ -89,3 +89,53 @@ function gerarErros() {
     resultado = 2;
   }
 }
+
+function iniciarJogo() {
+  resultado = 0;
+  palavraEscolhida = '';
+  palpites = '';
+  letrasErradas = '';
+
+  palavra.innerText = '';
+  palpite.value = '';
+  erros.innerText = '';
+
+  gerarPalavraEscolhida();
+  gerarPalavraComPalpites();
+  gerarErros();
+
+  palpite.disabled = false;
+}
+
+iniciarJogo();
+
+palpite.addEventListener('keypress', function(evt) {
+  if (evt.keyCode === 13) {
+    if (resultado === 0) {
+      if (palavraEscolhida.toUpperCase().indexOf(palpite.value.toUpperCase()) >= 0) {
+        palpites += palpite.value.toUpperCase();
+      } else {
+        if (letrasErradas.toUpperCase().indexOf(palpite.value.toUpperCase()) < 0) {
+          letrasErradas += palpite.value.toUpperCase();
+        }
+      }
+
+      palpite.value = '';
+
+      gerarPalavraComPalpites();
+      gerarErros();
+
+      if (resultado === 1) {
+        palpite.disabled = true;
+        if (confirm('Você ganhou :D.  Você teve ' + letrasErradas.length + ' erros.')) {
+          iniciarJogo();
+        }
+      } else if (resultado === 2) {
+        palpite.disabled = true;
+        if (confirm('Você perdeu :(.  A resposta era "' + palavraEscolhida + '".')) {
+          iniciarJogo();
+        }
+      }
+    }
+  }
+});
