@@ -28,7 +28,27 @@ var escolhasDePalavras = [
     'melancia',
     'internet',
     'sapato',
-    'liquidificador'
+    'liquidificador',
+    'amor',
+    'branco',
+    'copo',
+    'noite',
+    'ovo',
+    'parque',
+    'peixe',
+    'rato',
+    'pai',
+    'coelho',
+    'otorrinolaringologista',
+    'sino',
+    'campeonato',
+    'moeda',
+    'pedreiro',
+    'serenata',
+    'formiga',
+    'pneumonia',
+    'menta',
+    'caatinga'
   ];
 
 var resultado = 0;
