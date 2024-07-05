@@ -58,7 +58,7 @@
   font-size: 20px;
   margin-top: 10px;
   color: rgb(255, 0, 0);
-  border: solid black;
+  border: solid black 1px;
 }
 
 .instrucao {

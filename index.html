@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
-
   <title>Jogo da Forca</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/style.css">
-
 </head>
-<img src="assets/picture/gancho.png" alt="gancho-1" class="gancho-imagem">
-<body>  
+
+<body>
+  <img src="assets/picture/gancho.png" alt="gancho-1" class="gancho-imagem">
   <div class="container">
     <h1>Jogo da Forca</h1>
-      <div class="homem">
+    <div class="homem">
       <div class="homem-1"></div>
       <div class="homem-2"></div>
       <div class="homem-3"></div>
       <div class="homem-4"></div>
       <div class="homem-5"></div>
       <div class="homem-6"></div>
-      </div>
     </div>
-    <div class="conteudo">
-        <div id="palavra"></div>
-        <div class="container-palpite">
-            PALPITE: <input type="text" id="palpite" maxlength="1">
-        </div>
-            <br>
-            <div class="instrucao">
-            <strong>INSTRUÇÕES:</strong> 
-            <br>
-            Digite seu palpite na caixa acima.<br>
-            Pressione a tecla <strong>"ENTER"</strong> para enviar sua resposta.
-            </div>
-        <div id="erros"></div>
+  </div>
+  <div class="conteudo">
+    <div id="palavra"></div>
+    <div class="container-palpite">
+      PALPITE: <input type="text" id="palpite" maxlength="1">
     </div>
-        <script src="assets/script.js"></script>
+    <br>
+    <div class="instrucao">
+      <strong>INSTRUÇÕES:</strong>
+      <br>
+      Digite seu palpite na caixa acima.<br>
+      Pressione a tecla <strong>"ENTER"</strong> para enviar sua resposta.
+    </div>
+    <div id="erros"></div>
+  </div>
+
+  <div class="cadastro-palavras">
+    <button id="abrir-dialogo">Adicionar Palavra</button>
+  </div>
+
+  <div id="dialogo" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Cadastrar Nova Palavra</h2>
+      <form id="form-cadastro">
+        <input type="text" id="nova-palavra" placeholder="Adicionar palavra" required>
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/script.js"></script>
+
 </body>
 
 </html>
