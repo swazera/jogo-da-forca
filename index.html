@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <title>Jogo da Forca</title>
@@ -36,23 +35,22 @@
     <div id="erros"></div>
   </div>
 
-  <div class="cadastro-palavras">
+  <div class="botoes">
+    <button id="iniciar-jogo">Iniciar Jogo</button>
     <button id="abrir-dialogo">Adicionar Palavra</button>
   </div>
 
   <div id="dialogo" class="modal">
     <div class="modal-content">
       <span class="fechar">&times;</span>
-      <h2>Cadastrar Nova Palavra</h2>
+      <h2>Cadastrar Novas Palavras</h2>
       <form id="form-cadastro">
-        <input type="text" id="nova-palavra" placeholder="Adicionar palavra" required>
-        <button type="submit">Salvar</button>
+        <textarea id="novas-palavras" placeholder="Digite as novas palavras, separadas por vírgulas." required></textarea>
+        <button type="submit">Salvar e Jogar</button>
       </form>
     </div>
   </div>
 
   <script src="assets/script.js"></script>
-
 </body>
-
 </html>
