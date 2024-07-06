@@ -30,6 +30,6 @@ Ou se preferir, clique nesse [LINK](https://swazera.github.io/jogo_forca/) para 
 
 Para uma explicação detalhada do projeto e uma demonstração de como jogar, assista ao vídeo abaixo:
 
-[![Explicação do Jogo da Forca](https://postimg.cc/Wq1wjSrn)](https://www.youtube.com/watch?v=4H1A-nfot8s)
+[![Explicação do Jogo da Forca](https://imagizer.imageshack.com/img923/9219/QXZgaY.png)](https://www.youtube.com/watch?v=4H1A-nfot8s)
 
 ---
