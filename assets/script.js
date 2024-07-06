@@ -106,7 +106,7 @@ function salvarNovasPalavras(event) {
   event.preventDefault();
   var novasPalavrasTexto = document.getElementById('novas-palavras').value.trim();
   if (novasPalavrasTexto) {
-    var novasPalavras = novasPalavrasTexto.split(/[\s,]+/);  // Divide por vírgula ou espaços
+    var novasPalavras = novasPalavrasTexto.split(/[\s,]+/);  // Divide por vírgula
     escolhasDePalavras = escolhasDePalavras.concat(novasPalavras);
     localStorage.setItem('palavras', JSON.stringify(escolhasDePalavras));
     document.getElementById('novas-palavras').value = '';

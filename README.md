@@ -20,10 +20,16 @@ Ou se preferir, clique nesse [LINK](https://swazera.github.io/jogo_forca/) para 
 
 - **Interface Intuitiva**: Interface simples e fácil de usar com botões e instruções claras para o jogador.
 
-- **Responsividade**: O jogo é responsivo e ajusta-see bem a diferents tamanhos de tela, proporcionando uma experiência de usuário consistente em dispositivos móveis e desktops.
+- **Responsividade**: O jogo é responsivo e ajusta-se bem a diferentes tamanhos de tela, proporcionando uma experiência de usuário consistente.
 
 - **Feedback Visual**: O boneco da forca é desenhado conforme os erros são cometidos, dando um feedback visual ao jogador.
 
 - **Mensagens de Vitória/Derrota**: O jogo exibe mensagens ao jogador indicando vitória ou derrota.
+
+## Demonstração em Vídeo
+
+Para uma explicação detalhada do projeto e uma demonstração de como jogar, assista ao vídeo abaixo:
+
+[![Explicação do Jogo da Forca](https://img.youtube.com/vi/4H1A-nfot8s/0.jpg)](https://www.youtube.com/watch?v=4H1A-nfot8s)
 
 ---
