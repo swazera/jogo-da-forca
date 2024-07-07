@@ -8,7 +8,7 @@ O Jogo da Forca é um jogo de adivinhação onde os jogadores devem adivinhar um
 
 Para executar o Jogo, basta abrir o arquivo `index.html` no seu navegador.
 
-Ou se preferir, clique nesse [LINK](https://swazera.github.io/jogo_forca/) para abrir na internet.
+Ou se preferir, clique nesse [LINK](https://swazera.github.io/jogo-da-forca/) para abrir na internet.
 
 ## Funcionalidades Principais
 
