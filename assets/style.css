@@ -95,9 +95,9 @@ h1 {
   width: 10px;
   height: 60px;
   position: absolute;
-  top: 160px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-40deg);
+  top: 110px;
+  /* left: 110%; */
+  transform: translateX(+160%) rotate(-40deg);
 }
 
 .container-palpite, #palavra, .instrucao {

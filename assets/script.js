@@ -73,7 +73,9 @@ function gerarErros() {
   }
 
   for (var i = 0; i < letrasErradas.length; i++) {
-    document.querySelector('.homem-' + (i + 1)).style.display = 'block';
+    if (i < homem.length) {
+      document.querySelector('.homem-' + (i + 1)).style.display = 'block';
+    }
     letrasPerdidas += letrasErradas[i] + ', ';
   }
 
@@ -81,7 +83,13 @@ function gerarErros() {
   erros.innerHTML = 'ERROS: ' + letrasPerdidas;
 
   if (letrasErradas.length >= 6) {
-    resultado = 2;
+    setTimeout(function() {
+      resultado = 2;
+      palpite.disabled = true;
+      if (confirm('Você perdeu :(.  A resposta era "' + palavraEscolhida + '".')) {
+        iniciarJogo(escolhasDePalavras);
+      }
+    }, 100);
   }
 }
 
@@ -142,11 +150,6 @@ palpite.addEventListener('keypress', function(evt) {
       if (resultado === 1) {
         palpite.disabled = true;
         if (confirm('Você ganhou :D.  Você teve ' + letrasErradas.length + ' erros.')) {
-          iniciarJogo(escolhasDePalavras);
-        }
-      } else if (resultado === 2) {
-        palpite.disabled = true;
-        if (confirm('Você perdeu :(.  A resposta era "' + palavraEscolhida + '".')) {
           iniciarJogo(escolhasDePalavras);
         }
       }
