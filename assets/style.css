@@ -1,79 +1,42 @@
-  * {
-    font-family: "Courier", monospace;
-  } 
-
-   body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  } 
-
-  h1 {
-    font-size: 50px;
-    margin-top: 30px;
-    text-align: center;
-  }
-
-  .gancho-imagem {
-    width: 300px;
-    height: center;
-    position: absolute;
-    margin-top: 200px;
-  }
-
-  .container {
-    padding: 80px;
-  }
-
-  .conteudo {
-    display: inline-block;
-    margin: 0 auto;
-  }
-
-  #palavra {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 300px;
-  }
-
-  .container-palpite {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 15px;
-  }
-
-  #palpite {
-    font-size: 25px;
-    text-align: center;
-    width: 30px;
-    border: none;
-    border: solid 2px rgb(255, 0, 0);
-    outline: none;
-    text-transform: capitalize;
-  }
-
-  #erros {
-  text-align: left;
-  font-size: 20px;
-  margin-top: 10px;
-  color: rgb(255, 0, 0);
-  border: solid black 1px;
+* {
+  font-family: "Courier", monospace;
 }
 
-.instrucao {
-  font-size: 18px;
-  margin-top: 7px;
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 20px;
   text-align: center;
 }
 
-/* Elaborando o boneco do jogo */
+.forca-e-boneco {
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+  margin: 0 auto;
+}
 
+.gancho-imagem {
+  width: 100%;
+}
+
+/* Criando boneco */
 .homem {
-  width: 100px;
-  height: 375px;
   position: absolute;
-  top: 29.70vh;
-  left: calc(50.5% - 0vw)
+  top: 18%; 
+  left: 69%;
+  transform: translateX(-50%);
+}
+
+.homem div {
+  display: none;
 }
 
 .homem-1 {
@@ -82,9 +45,9 @@
   border: solid 10px black;
   border-radius: 50%;
   position: absolute;
-  top: -2px;
-  left: 19px;
-  display: none;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .homem-2 {
@@ -92,9 +55,9 @@
   width: 10px;
   height: 70px;
   position: absolute;
-  top: 57px;
-  left: 44px;
-  display: none;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .homem-3 {
@@ -102,10 +65,9 @@
   width: 10px;
   height: 60px;
   position: absolute;
-  top: 32px;
-  left: 21px;
-  transform: rotate(-50deg);
-  display: none;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-300%) rotate(-50deg);
 }
 
 .homem-4 {
@@ -113,10 +75,9 @@
   width: 10px;
   height: 60px;
   position: absolute;
-  top: 30px;
-  right: 21px;
-  transform: rotate(50deg);
-  display: none;
+  top: 40px;
+  left: 50%;
+  transform: translateX(+200%) rotate(50deg);
 }
 
 .homem-5 {
@@ -124,10 +85,9 @@
   width: 10px;
   height: 60px;
   position: absolute;
-  bottom: 200px;
-  left: 25px;
-  transform: rotate(40deg);
-  display: none;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-250%) rotate(40deg);
 }
 
 .homem-6 {
@@ -135,13 +95,35 @@
   width: 10px;
   height: 60px;
   position: absolute;
-  bottom: 200px;
-  right: 25px;
-  transform: rotate(-40deg);
-  display: none;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-40deg);
 }
 
-/* Estilizando os botões */
+.container-palpite, #palavra, .instrucao {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px;
+}
+
+#erros {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 5px;
+  border: solid black 1px;
+  color: red;
+}
+
+#palpite {
+  font-size: 1em;
+  text-align: center;
+  width: 50px;
+  border: none;
+  border: solid 2px rgb(255, 0, 0);
+  outline: none;
+  text-transform: capitalize;
+  padding: 7px;
+}
 
 .botoes {
   margin-top: 20px;
@@ -149,7 +131,7 @@
 }
 
 .botoes button {
-  font-size: 20px;
+  font-size: 1.5em;
   padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
@@ -215,7 +197,7 @@
 }
 
 .modal textarea {
-  font-size: 20px;
+  font-size: 1em;
   padding: 10px;
   width: calc(100% - 22px);
   height: 100px;
@@ -225,7 +207,7 @@
 }
 
 .modal button {
-  font-size: 20px;
+  font-size: 1.2em;
   padding: 10px 20px;
   cursor: pointer;
   border: none;
